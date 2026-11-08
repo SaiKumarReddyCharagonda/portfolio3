@@ -1,0 +1,180 @@
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic portfolio of Sai Kumar Reddy Charagonda featuring AI and machine learning projects.">
+<title>AI &amp; ML Portfolio | Sai Kumar Reddy Charagonda</title>
+<style>
+:root{--navy:#14243d;--blue:#2855a6;--cyan:#16a6b6;--ink:#263449;--muted:#64748b;--line:#dce4ef;--paper:#fff;--bg:#f3f6fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Segoe UI",Arial,sans-serif}
+.hero{background:linear-gradient(135deg,#10213b 0%,#1d477e 62%,#167f91 100%);color:white;padding:58px 22px 50px;text-align:center}
+.hero-inner{max-width:1000px;margin:auto}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;font-weight:800;color:#b9e7f0;text-transform:uppercase;margin:0 0 12px}
+.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin:0 auto 12px}
+.subtitle{font-size:clamp(1rem,2vw,1.2rem);color:#e0edf9;margin:0 auto 12px;max-width:800px}
+.owner{font-weight:700;margin:15px 0 0;color:#fff}
+.role{color:#c8e8f3;font-size:.95rem;margin:2px 0}
+.nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:1000px;margin:auto;padding:12px 20px;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.nav a{color:var(--navy);font-size:.9rem;font-weight:700;text-decoration:none}
+.nav a:hover{color:var(--cyan)}
+main{max-width:1000px;margin:34px auto 60px;padding:0 20px}
+.welcome,.artifact,.closing{background:var(--paper);border:1px solid var(--line);border-radius:15px;box-shadow:0 8px 24px rgba(15,35,65,.055);margin-bottom:24px}
+.welcome{padding:26px 30px}
+.section-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:800;margin:0 0 5px}
+h2{color:var(--navy);font-size:1.55rem;line-height:1.3;margin:0 0 12px}
+p{margin:8px 0 14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+button,.portfolio-link{border:0;border-radius:8px;padding:10px 15px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+button.primary,.portfolio-link{background:var(--blue);color:#fff}
+button.secondary{background:#eaf0f8;color:var(--navy);border:1px solid #d6e0ee}
+button:hover,.portfolio-link:hover{filter:brightness(.94)}
+.artifact{overflow:hidden}
+.artifact-head{padding:25px 30px 18px;border-bottom:1px solid var(--line)}
+.artifact-label{display:inline-block;padding:4px 10px;border-radius:30px;background:#eaf3ff;color:#24549b;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.artifact-head h2{font-size:1.45rem;margin:0}
+.artifact-head p{color:var(--muted);margin:8px 0 0}
+.details{padding:8px 30px 25px}
+details{border-bottom:1px solid var(--line)}
+details:last-child{border-bottom:0}
+summary{list-style:none;cursor:pointer;padding:14px 4px;font-weight:750;color:#1c3c68;display:flex;align-items:center;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:1.35rem;color:var(--cyan);font-weight:500}
+details[open] summary:after{content:"−"}
+.detail-content{padding:0 4px 14px}
+.detail-content ul,.detail-content ol{padding-left:24px;margin:8px 0 14px}
+.detail-content li{margin:5px 0}
+.detail-content h4{color:#244d85;margin:18px 0 6px;font-size:1rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.tags span{background:#f0f4fa;border:1px solid #dce5f0;border-radius:30px;padding:5px 10px;font-size:.83rem;color:#3a4b62}
+.note{background:#eff8fb;border-left:4px solid var(--cyan);padding:13px 16px;border-radius:7px;margin:14px 0}
+.closing{padding:25px 30px}
+footer{background:var(--navy);color:#cbd5e1;text-align:center;padding:25px 15px;font-size:.9rem}
+footer p{margin:3px}
+@media(max-width:650px){.hero{padding:44px 18px}.nav-inner{gap:10px 17px}main{padding:0 12px;margin-top:20px}.welcome,.closing{padding:21px}.artifact-head{padding:21px 20px 15px}.details{padding:6px 20px 20px}}
+@media print{body{background:#fff;color:#111}.nav,.controls,footer{display:none!important}main{max-width:none;margin:0;padding:0}.welcome,.artifact,.closing{box-shadow:none;break-inside:avoid;border:1px solid #ccc}details:not([open]) .detail-content{display:block}details{break-inside:avoid}summary:after{display:none}.hero{background:#fff!important;color:#111;padding:25px}.hero .eyebrow,.hero .subtitle,.hero .owner,.hero .role{color:#333}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow">Academic Portfolio · AI &amp; Machine Learning</p>
+    <h1>Artificial Intelligence &amp; Machine Learning Portfolio</h1>
+    <p class="subtitle">Exploring the evolution of AI and applying machine learning to real-world business challenges</p>
+    <p class="owner">Sai Kumar Reddy Charagonda</p>
+    <p class="role">Java Development → AI and Data Analytics</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Portfolio navigation">
+  <div class="nav-inner">
+    <a href="#welcome">Welcome</a>
+    <a href="#artifact1">Artifact 1</a>
+    <a href="#artifact2">Artifact 2</a>
+    <a href="#artifact3">Artifact 3</a>
+    <a href="#portfolio">GitHub Portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <section class="welcome" id="welcome">
+    <p class="section-kicker">Welcome to My Portfolio</p>
+    <h2>Learning, Building, and Applying AI</h2>
+    <p>This portfolio presents three learning artifacts that demonstrate my developing knowledge of artificial intelligence and machine learning. Artifact 1 explores the historical evolution of AI and ML technologies. Artifact 2 connects machine learning methods to a practical business problem: predicting customer churn. Artifact 3 examines how large language models generate responses and why responsible use requires critical thinking and verification.</p>
+    <p>As a Java developer transitioning into AI and Data Analytics, I am building on my software development background while strengthening my skills in data analysis, predictive modeling, and responsible AI. Click each heading below to view its content.</p>
+    <div class="controls">
+      <button class="primary" type="button" onclick="setAll(true)">Expand All Sections</button>
+      <button class="secondary" type="button" onclick="setAll(false)">Collapse All Sections</button>
+      <button class="secondary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </section>
+
+  <section class="artifact" id="artifact1">
+    <div class="artifact-head">
+      <span class="artifact-label">Academic Portfolio · Artifact 01</span>
+      <h2>AI and ML Timelines</h2>
+      <p>Tracing the Evolution of Artificial Intelligence and Machine Learning Technologies</p>
+    </div>
+    <div class="details">
+      <details><summary>1. Title</summary><div class="detail-content"><p><strong>AI and ML Timelines: Tracing the Evolution of Artificial Intelligence and Machine Learning Technologies</strong></p></div></details>
+      <details><summary>2. Introduction</summary><div class="detail-content"><p>As a Java developer transitioning into AI and Data Analytics, understanding the historical evolution of AI and ML is essential to my professional growth. This timeline artifact serves as both a learning tool and a resource that demonstrates how foundational concepts helped build the modern AI landscape I am now entering.</p></div></details>
+      <details><summary>3. Description</summary><div class="detail-content"><p>This artifact is an interactive visual timeline created and published using GitHub. The timeline traces key milestones in AI and ML development, from the Dartmouth Conference in 1956 through contemporary deep learning advances. The timeline includes:</p><ul><li>Pivotal moments in AI history, including the Turing Test, expert systems, neural networks, and deep learning.</li><li>Key breakthroughs across different decades.</li><li>Influential researchers and their contributions.</li><li>Transition points from symbolic AI to data-driven approaches.</li><li>Current developments and emerging trends, including large language models (LLMs), Transformers, and federated learning.</li></ul></div></details>
+      <details><summary>4. Objective</summary><div class="detail-content"><ul><li>Consolidate my foundational knowledge of how AI and ML have evolved.</li><li>Create a visual reference guide for discussions about AI evolution with peers and potential employers.</li><li>Demonstrate my ability to synthesize complex historical information into an accessible format.</li><li>Show how traditional Java development connects with modern AI technologies.</li></ul></div></details>
+      <details><summary>5. Process</summary><div class="detail-content"><ul><li>Researched major milestones in AI and ML history using course materials and credible sources.</li><li>Identified approximately 15–20 key events spanning 1956 to 2026.</li><li>Organized the milestones chronologically and thematically, moving from early AI to machine learning, deep learning, and current trends.</li><li>Used a GitHub timeline template to create a clean, professional visualization.</li><li>Added brief descriptions, dates, and explanations of the relevance of each milestone.</li><li>Used color categories to make different eras and themes easier to recognize.</li></ul></div></details>
+      <details><summary>6. Tools and Technologies Used</summary><div class="detail-content"><div class="tags"><span>GitHub</span><span>GitHub Pages</span><span>HTML/CSS</span><span>Course materials</span><span>AI history research</span></div><p>GitHub and GitHub Pages were used to host and present the timeline. Course materials and AI history sources supported the research and selection of milestones.</p></div></details>
+      <details><summary>7. Value Proposition</summary><div class="detail-content"><h4>For Employers</h4><p>The timeline demonstrates my ability to place modern AI technologies in their historical context. The artifact shows that I am working to understand the development and purpose of current approaches, rather than focusing only on individual tools.</p><h4>For Peers and Collaborators</h4><p>The artifact provides a shareable reference that makes major developments in AI history easier to explore and discuss.</p><h4>For My Professional Growth</h4><p>The timeline helps connect my Java development background with my growing focus on AI, machine learning, and data analytics.</p></div></details>
+      <details><summary>8. Unique Value</summary><div class="detail-content"><p>Unlike a generic AI timeline, this artifact is tailored to the concepts I am studying in my machine learning coursework. The timeline is designed as a professional learning resource rather than only a class assignment. The artifact also reflects my career transition by highlighting the relationship between traditional software development and modern AI approaches.</p></div></details>
+    </div>
+  </section>
+
+  <section class="artifact" id="artifact2">
+    <div class="artifact-head">
+      <span class="artifact-label">Academic Portfolio · Artifact 02</span>
+      <h2>AI-Powered Customer Churn Prediction Using Machine Learning</h2>
+      <p>Applying predictive modeling to a customer retention challenge</p>
+    </div>
+    <div class="details">
+      <details><summary>1. Introduction</summary><div class="detail-content"><p>Artificial intelligence (AI) and machine learning (ML) help organizations analyze data and make informed decisions. Customer churn occurs when customers stop using a company's products or services. Predicting churn can help businesses identify customers who may leave, improve customer retention, and maintain long-term relationships.</p></div></details>
+      <details><summary>2. Description</summary><div class="detail-content"><p>This project explores how machine learning can identify customers who may discontinue a service. The proposed model analyzes customer engagement, purchase history, subscription activity, and support interactions to identify patterns associated with churn. These predictions can help businesses develop targeted retention strategies and make better-informed customer relationship decisions.</p></div></details>
+      <details><summary>3. Objective</summary><div class="detail-content"><p>The objective is to demonstrate how machine learning can address customer retention challenges. The project explores customer data analysis, predictive modeling, model evaluation, and responsible AI practices while explaining technical concepts in a way that nontechnical audiences can understand.</p></div></details>
+      <details><summary>4. Process</summary><div class="detail-content"><ol><li><strong>Define the problem:</strong> Treat customer churn prediction as a supervised machine learning classification problem.</li><li><strong>Collect and inspect data:</strong> Use historical customer information and review the available features and churn target variable.</li><li><strong>Prepare the data:</strong> Check for missing values, duplicate records, inconsistent entries, and data types. Apply suitable preprocessing and encoding where needed.</li><li><strong>Split the dataset:</strong> Divide the prepared data into training and testing sets so model performance can be evaluated on unseen records.</li><li><strong>Build the model:</strong> Use logistic regression as a classification approach to estimate the likelihood that a customer will churn.</li><li><strong>Evaluate performance:</strong> Review accuracy, precision, recall, F1-score, and the confusion matrix to understand the model's strengths and limitations.</li><li><strong>Interpret and apply findings:</strong> Use validated results to help prioritize customer outreach and service improvements, with human oversight and ongoing model monitoring.</li></ol></div></details>
+      <details><summary>5. Tools and Technologies Used</summary><div class="detail-content"><div class="tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter Notebook</span><span>Google Colab</span><span>Salesforce CRM (future integration)</span></div><p>Python supports data analysis and model development. Pandas can be used to organize and clean datasets, while Scikit-learn provides machine learning algorithms and evaluation methods. Matplotlib and Seaborn support data visualization. Jupyter Notebook or Google Colab can be used to develop and document the project. Salesforce CRM could support a future integration of validated predictions.</p><div class="note"><strong>Implementation note:</strong> List tools as used only when they were actually used in the project. Salesforce CRM is identified as a possible future integration, not as a completed implementation.</div></div></details>
+      <details><summary>6. Value Proposition</summary><div class="detail-content"><p>The proposed solution can help businesses identify potential churn risks and prioritize customer retention efforts. By identifying patterns in customer behavior, the model may support better resource allocation, improved customer engagement, and data-driven decisions. The usefulness of the predictions depends on data quality, model performance, and appropriate business interpretation.</p></div></details>
+      <details><summary>7. Unique Value</summary><div class="detail-content"><p>This artifact connects machine learning concepts with a practical business challenge. In addition to predictive analytics, the project emphasizes responsible AI practices, including data privacy, fairness, transparency, and human judgment. These considerations are important because churn predictions may influence how organizations communicate with and make decisions about customers.</p></div></details>
+      <details><summary>8. Relevance</summary><div class="detail-content"><p>Customer churn prediction is relevant to telecommunications, banking, retail, and subscription-based businesses. Organizations in these industries can use predictive insights to better understand customer behavior and plan retention activities. This project demonstrates my developing understanding of how AI can support business decisions and address organizational problems.</p></div></details>
+      <details><summary>9. Expected Learning Outcome</summary><div class="detail-content"><p>Through this project, I aim to strengthen my ability to prepare real-world data, build and evaluate a classification model, interpret performance measures, and explain how predictive analytics can support responsible business decisions.</p></div></details>
+    </div>
+  </section>
+
+  <section class="artifact" id="artifact3">
+    <div class="artifact-head">
+      <span class="artifact-label">Academic Portfolio · Artifact 03</span>
+      <h2>Professor Predict — Understanding Large Language Models</h2>
+      <p>Exploring next-token prediction, model training, hallucinations, and responsible AI use</p>
+    </div>
+    <div class="details">
+      <details open><summary>1. Introduction</summary><div class="detail-content"><p>This artifact documents my participation in an educational activity designed to explain how large language models (LLMs) generate responses, learn language patterns, and sometimes produce inaccurate information. Sentence predictions, training-data examples, and practical task classifications were used to discuss the strengths and limitations of AI during the activity.</p></div></details>
+      <details><summary>2. Description</summary><div class="detail-content"><p>The activity examined next-token prediction, pretraining, post-training, training-data availability, hallucinations, and responsible AI use. One example involved a fictional nation called Velmora. Recognizing that the country was fictional helped demonstrate why a plausible question does not necessarily have a factual answer.</p><p>The activity also compared suitable AI tasks, such as drafting and brainstorming, with tasks requiring additional verification, including current financial information, precise calculations, and personalized legal guidance.</p></div></details>
+      <details><summary>3. Objective</summary><div class="detail-content"><p>The goal was to gain insight into the inner workings of LLMs and critically reflect on the contexts in which they can be used appropriately. The activity also aimed to strengthen my ability to distinguish unsupported claims from verified factual knowledge and recognize the difference when evaluating AI-generated language.</p></div></details>
+      <details><summary>4. Process</summary><div class="detail-content"><p>I followed the educational activity by analyzing familiar sentence patterns, discussing a question about the fictional country, and examining the concepts of pretraining, post-training, and general categories of training data. I then classified different tasks according to whether an LLM could reasonably assist without additional tools or whether independent verification was necessary.</p><p>I discussed the reasons for these classifications and reflected on the importance of critical thinking, source checking, and human judgment when working with information generated by artificial intelligence.</p></div></details>
+      <details><summary>5. Tools and Technologies Used</summary><div class="detail-content"><div class="tags"><span>ChatGPT / LLM</span><span>Pretraining concepts</span><span>Post-training concepts</span><span>Critical evaluation</span><span>Fact-checking</span><span>GitHub</span><span>Markdown</span></div><ul><li>ChatGPT or another commercial AI tool for the educational interaction.</li><li>Large language model concepts, including pretraining and post-training.</li><li>Critical evaluation and fact-checking principles.</li><li>GitHub and Markdown for documenting and presenting the portfolio artifact.</li></ul></div></details>
+      <details><summary>6. Value Proposition</summary><div class="detail-content"><p>This activity strengthened my ability to explain basic AI concepts, assess the credibility of generated answers, and identify when additional evidence or tools are required. These skills are valuable in business, research, and technology-related decisions and applications of AI.</p></div></details>
+      <details><summary>7. Unique Value</summary><div class="detail-content"><p>The activity links technical AI concepts to real-world examples and scenarios that are understandable to a nontechnical audience. It highlights that a fluent response may appear correct even when it is inaccurate, making context, verification, and human judgment essential to effective AI use.</p></div></details>
+      <details><summary>8. Relevance</summary><div class="detail-content"><p>Understanding LLM capabilities and limitations is important when organizations use AI for communication, research, customer service, automation, and decision support. This artifact demonstrates foundational AI literacy and responsible evaluation of AI-generated content.</p></div></details>
+      <details><summary>9. Learning Reflection</summary><div class="detail-content"><p>The activity helped me recognize that LLM responses are generated through learned language patterns and are not automatically verified facts. I learned to consider the task, check important claims against reliable sources, and use human judgment when the consequences of an inaccurate answer could be significant.</p></div></details>
+    </div>
+  </section>
+
+  <section class="closing" id="portfolio">
+    <p class="section-kicker">Explore My Work</p>
+    <h2>GitHub Portfolio</h2>
+    <p>Visit my existing GitHub Pages portfolio to view the AI and ML timeline and related work.</p>
+    <a class="portfolio-link" href="https://saikumarreddycharagonda.github.io/Sai-Kumar-Reddy-Charagondaa/" target="_blank" rel="noopener noreferrer">Visit My GitHub Portfolio ↗</a>
+    <h2 style="margin-top:28px">Conclusion</h2>
+    <p>These three portfolio artifacts represent my continued development in AI and machine learning. They demonstrate my ability to learn technical concepts, evaluate possible solutions, communicate ideas, and reflect on responsible technology use. I will continue to expand this portfolio as I develop professionally, practically, and analytically.</p>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Sai Kumar Reddy Charagonda</strong></p>
+  <p>Academic Portfolio · Artificial Intelligence &amp; Machine Learning</p>
+</footer>
+<script>
+function setAll(openState) {
+  document.querySelectorAll('main details').forEach(section => {
+    section.open = openState;
+  });
+}
+</script>
+</body>
+</html>
+'''
+
+path = Path("/mnt/data/sai_kumar_reddy_github_style_portfolio.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created updated portfolio: {path}")
